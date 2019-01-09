@@ -1,0 +1,35 @@
+Generate an SSH key.
+. ssh-keygen -t rsa -b 4096 -C "username@example"
+
+Confirm that you generated the SSH key correctly.
+. cat ~/.ssh/id_rsa.pub
+
+	
+Register your SSH key with the private repository host
+
+.Log in to your GitHub account.
+.Navigate to your private repository.
+.In the top right corner of the page, click Settings. A new page will appear.
+.In the left side menu, click Deploy keys. A new page will appear.
+.In the top right corner of the page, click Add deploy key. A new page will appear.
+.Enter your SSH key data:
+.In the Title text box, enter a display name for the key.
+.In the Key text box, paste the entire SSH key.
+.If you want to push code from your cPanel account to your GitHub account, select the Allow write access checkbox.
+
+Note:
+
+If you do not select this checkbox, you can only deploy changes from your GitHub repository to the cPanel-hosted repository.
+
+. Click Add key.
+
+Test the SSH key.
+. ssh -T git@example.com 
+
+Clone the repository.
+.git clone git@example.com:MyStuff/private-repository.git
+
+https://ngurajeka.com/post/ansible-git-module-with-private-repository/
+https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
+
+https://documentation.cpanel.net/display/CKB/Guide+to+Git+-+Set+Up+Access+to+Private+Repositories

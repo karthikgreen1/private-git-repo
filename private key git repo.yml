@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  tasks:
+    - name: pull the latest code from git
+      git:
+        repo: https://github.com/karthikgreen1/CSV_Sample.git
+        dest: /path/to/remote/dir
+        key_file: ~/.ssh/deployment_key
+
+
+
